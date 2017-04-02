@@ -32,9 +32,6 @@ document.addEventListener("DOMContentLoaded", function() {
             score: 0
         };
 
-
-
-
     //display game elements 
     function setGameElements() {
         switch (gameState) {
@@ -128,11 +125,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function checkWinner() {
-
-
-        if (computer.score - player.score >= 5) {
+    	var alertInitialized = false;	
+        if (!alertInitialized && (computer.score - player.score >= 5)) {
             var decWinner = confirm("Wymiękasz i chcesz zacząć od nowa?");
-
+            	 alertInitialized = true;
             if (decWinner == true) {
                 gameState = 'notStarted';
             } else {
